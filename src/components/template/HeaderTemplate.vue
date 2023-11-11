@@ -1,16 +1,17 @@
 <script setup lang="ts">
 import { useRouter } from 'vue-router';
-import { onMounted } from 'vue';
+import { onMounted, ref } from 'vue';
 
 import { gsap } from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
-
 import { LocalStorage } from 'quasar';
+import CustomMobileMenu from '../../components/CustomMobileMenu.vue';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const router = useRouter();
 
+const isDisplayedMenu = ref(false);
 const essentialLinks = [
   { title: 'Posts', link: '/posts' },
   { title: 'Albums', link: '/albums' },
@@ -51,7 +52,7 @@ onMounted(() => {
       <img src="/src/images/logo.svg" alt="logo" />
     </div>
 
-    <div class="flex items-center gap-x-4">
+    <div class="flex items-center">
       <router-link
         v-for="(item, idx) in essentialLinks"
         :key="idx"
@@ -60,6 +61,11 @@ onMounted(() => {
       >
         <p class="p-2">{{ item.title }}</p>
       </router-link>
+      <q-icon
+        name="fa-solid fa-bars"
+        class="block ssm:!hidden text-[24px] cursor-pointer"
+        @click="isDisplayedMenu = true"
+      />
       <div
         class="flex justify-center w-[100px] cursor-pointer"
         @click="handleLogout"
@@ -67,6 +73,11 @@ onMounted(() => {
         <q-icon name="fa-solid fa-sign-out" class="text-[24px]" />
       </div>
     </div>
+    <CustomMobileMenu
+      v-if="isDisplayedMenu"
+      :essential-links="essentialLinks"
+      @close="isDisplayedMenu = false"
+    />
   </div>
 </template>
 <style lang="scss" scoped>
