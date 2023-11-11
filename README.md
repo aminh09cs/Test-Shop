@@ -4,17 +4,17 @@ STORE TEST
 
 ## Install the dependencies
 ```bash
-yarn
-# or
-npm install
+yarn 
 ```
 
 ### Start the app in development mode (hot-code reloading, error reporting, etc.)
 ```bash
-quasar dev
+yarn dev
 ```
-
-
+### Choose port
+```bash
+If the local port doesn't work, choose another port
+```
 ### Lint the files
 ```bash
 yarn lint
