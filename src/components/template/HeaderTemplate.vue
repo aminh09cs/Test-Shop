@@ -66,11 +66,12 @@ onMounted(() => {
         class="block ssm:!hidden text-[24px] cursor-pointer"
         @click="isDisplayedMenu = true"
       />
-      <div
-        class="flex justify-center w-[100px] cursor-pointer"
-        @click="handleLogout"
-      >
-        <q-icon name="fa-solid fa-sign-out" class="text-[24px]" />
+      <div class="flex justify-center w-[100px]">
+        <q-icon
+          name="fa-solid fa-sign-out"
+          class="text-[24px] cursor-pointer"
+          @click="handleLogout"
+        />
       </div>
     </div>
     <CustomMobileMenu
