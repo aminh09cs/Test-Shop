@@ -1,4 +1,4 @@
-# MY-STORE (my-store)
+# NOTE FOR PROJECT (No API: User can comment on the post)
 
 STORE TEST
 
