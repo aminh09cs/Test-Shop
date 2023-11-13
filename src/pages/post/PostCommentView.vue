@@ -39,7 +39,7 @@ onMounted(() => {
   <div
     v-for="item in dataPostComment"
     :key="item.id"
-    class="flex gap-x-3 items-center w-full cursor-pointer mb-3"
+    class="flex gap-x-3 w-full cursor-pointer mb-3"
   >
     <!-- <q-icon name="fa-solid fa-user" class="p-3 border rounded-[50%]" /> -->
     <img
