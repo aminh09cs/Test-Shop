@@ -6,7 +6,9 @@ const { id } = route.params;
 </script>
 
 <template>
-  <div class="flex gap-x-6 gap-y-10 items-end font-bold">
+  <div
+    class="flex gap-x-6 gap-y-10 justify-between max-w-[1080px] m-auto items-end font-bold"
+  >
     <img src="https://via.placeholder.com/600/24f355" alt="logo1" />
     <div class="flex flex-col gap-y-5">
       <div>
