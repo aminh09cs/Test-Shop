@@ -52,7 +52,7 @@ onMounted(() => {
       <img src="/src/images/logo.svg" alt="logo" />
     </div>
 
-    <div class="flex items-center">
+    <div class="flex gap-x-3 items-center">
       <router-link
         v-for="(item, idx) in essentialLinks"
         :key="idx"
