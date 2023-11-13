@@ -37,6 +37,17 @@ const routes: RouteRecordRaw[] = [
     ],
   },
   {
+    path: '/track/:id',
+    component: () => import('layouts/MainLayout.vue'),
+    meta: { isAuthenticated: true },
+    children: [
+      {
+        path: '/track/:id',
+        component: () => import('pages/track/TrackManagement.vue'),
+      },
+    ],
+  },
+  {
     path: '/:catchAll(.*)*',
     component: () => import('pages/ErrorNotFound.vue'),
   },

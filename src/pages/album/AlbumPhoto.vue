@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { onMounted, ref, watch } from 'vue';
-import { useRoute } from 'vue-router';
+import { useRoute, useRouter } from 'vue-router';
 
 import { useQuasar } from 'quasar';
 import { albumRepo } from 'src/repositories/album';
@@ -8,6 +8,8 @@ import CustomInput from '../../components/CustomInput.vue';
 
 const $q = useQuasar();
 const route = useRoute();
+const router = useRouter();
+
 const { id } = route.params;
 
 const search = ref();
@@ -69,6 +71,7 @@ onMounted(() => {
         v-for="item in dataAlbumPhotos"
         :key="item.id"
         class="flex justify-between col-span-2 md:col-span-1 hover:background-[#000000] border-b pb-2 cursor-pointer"
+        @click="router.push(`/track/${item.id}`)"
       >
         <div class="flex items-center gap-x-3 2xl:gap-x-4">
           <img
